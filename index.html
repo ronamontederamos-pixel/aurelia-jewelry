@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aurelia Jewelry</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 7%;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 70px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #050505;
+    border-bottom: 1px solid #b88a35;
+}
+
+.logo {
+    color: #d6a64f;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+nav ul li a {
+    font-size: 12px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d6a64f;
+}
+
+.nav-button {
+    border: 1px solid #d6a64f;
+    border-radius: 20px;
+    padding: 8px 22px;
+    color: white;
+    font-size: 12px;
+}
+
+
+/* ================= HOME ================= */
+
+.home {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    background: #050505;
+}
+
+.home-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+    gap: 40px;
+}
+
+.home-images {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.home-img {
+    overflow: hidden;
+    border: 1px solid #b88a35;
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-img.large {
+    width: 260px;
+    height: 360px;
+    border-radius: 130px 130px 20px 20px;
+}
+
+.home-img.small {
+    width: 170px;
+    height: 270px;
+    border-radius: 100px;
+}
+
+.home-content {
+    padding-left: 20px;
+}
+
+.home-content h1 {
+    color: #d9a84e;
+    font-family: Georgia, serif;
+    font-size: 75px;
+    line-height: 0.9;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.home-content h2 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: #d0d0d0;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 570px;
+}
+
+.gold-line {
+    width: 100%;
+    height: 1px;
+    background: #777;
+    margin: 25px 0;
+}
+
+.home-button {
+    display: inline-block;
+    border: 1px solid #d6a64f;
+    border-radius: 25px;
+    padding: 12px 35px;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    background: #d6a64f;
+    color: #050505;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.title {
+    color: #d6a64f;
+    font-family: Georgia, serif;
+    font-size: 55px;
+    font-style: italic;
+    margin-bottom: 35px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #050505;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.about-images img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.round-left {
+    border-radius: 100px 100px 20px 20px;
+}
+
+.round-center {
+    border-radius: 50%;
+}
+
+.round-right {
+    border-radius: 100px 100px 20px 20px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about-box {
+    padding: 20px;
+}
+
+.about-box:first-child {
+    border-right: 1px solid #b88a35;
+}
+
+.about-box h2 {
+    color: #d6a64f;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-box h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.about-box p {
+    color: #cfcfcf;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 50px;
+}
+
+.service-image {
+    height: 600px;
+    overflow: hidden;
+    border-radius: 160px 160px 30px 30px;
+    border: 1px solid #b88a35;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-content h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.services-content p {
+    color: #cfcfcf;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.service-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-list li {
+    color: #d6a64f;
+    font-size: 13px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.service-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content p {
+    color: #cfcfcf;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+    border: 1px solid #d6a64f;
+    border-radius: 25px;
+    padding: 12px 35px;
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background: #d6a64f;
+    color: #050505;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0a0a0a;
+    padding: 40px 7%;
+    text-align: center;
+    border-top: 1px solid #b88a35;
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">Aurelia</div>
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <a href="#" class="nav-button">SHOP</a>
+</nav>
+
+<!-- HOME SECTION -->
+<section class="home" id="home">
+    <div class="home-container">
+        <div class="home-images">
+            <div class="home-img large">
+                <img src="https://via.placeholder.com/260x360" alt="Jewelry">
+            </div>
+            <div class="home-img small">
+                <img src="https://via.placeholder.com/170x270" alt="Jewelry">
+            </div>
+        </div>
+        <div class="home-content">
+            <h1>Aurelia</h1>
+            <h2>Luxury Jewelry Collection</h2>
+            <p>Discover our exquisite collection of handcrafted jewelry pieces. Each piece is carefully designed and created to reflect elegance, sophistication, and timeless beauty.</p>
+            <div class="gold-line"></div>
+            <a href="#" class="home-button">EXPLORE COLLECTION</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <h2 class="title">About Aurelia</h2>
+    <div class="about-images">
+        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-left">
+        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-center">
+        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-right">
+    </div>
+    <div class="about-content">
+        <div class="about-box">
+            <h2>Our Story</h2>
+            <p>Founded in 2020, Aurelia has been dedicated to creating luxury jewelry pieces that combine traditional craftsmanship with contemporary design. Our artisans work tirelessly to ensure every piece meets our exacting standards of quality and beauty.</p>
+        </div>
+        <div class="about-box">
+            <h2>Our Values</h2>
+            <p>We believe in sustainability, ethical sourcing, and supporting local artisans. Each piece in our collection is made with the finest materials and reflects our commitment to environmental responsibility and social impact.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+    <div class="service-image">
+        <img src="https://via.placeholder.com/500x600" alt="Services">
+    </div>
+    <div class="services-content">
+        <h2 class="title">Our Services</h2>
+        <h3>Premium Jewelry Services</h3>
+        <p>We offer a complete range of jewelry services to ensure your pieces remain beautiful for years to come.</p>
+        <ul class="service-list">
+            <li>Custom Design & Creation</li>
+            <li>Professional Cleaning & Maintenance</li>
+            <li>Jewelry Repair & Restoration</li>
+            <li>Resizing & Adjustments</li>
+            <li>Certification & Appraisal</li>
+            <li>Engraving Services</li>
+        </ul>
+        <a href="#" class="home-button">LEARN MORE</a>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2 class="title">Get In Touch</h2>
+        <p>Have questions or interested in our collections? We'd love to hear from you. Contact our team today to schedule a consultation or visit our showroom.</p>
+        <a href="mailto:info@aurelia.com" class="contact-button">CONTACT US</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2024 Aurelia Jewelry. All rights reserved. | Luxury Jewelry Collection</p>
+</footer>
+
+</body>
+
+</html>
