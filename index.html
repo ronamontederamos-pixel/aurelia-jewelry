@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -22,19 +22,20 @@ html {
 }
 
 body {
-    background: #050505;
+    background: #080808;
     color: white;
-    font-family: Arial, sans-serif;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }
 
 section {
-    min-height: 100vh;
     padding: 80px 7%;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.gold {
+    color: #d9a441;
 }
 
 
@@ -45,308 +46,307 @@ nav {
     top: 0;
     z-index: 1000;
 
-    height: 70px;
-    padding: 0 6%;
+    background: #080808;
+    border-bottom: 1px solid #a87932;
+
+    padding: 18px 6%;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    background: #050505;
-    border-bottom: 1px solid #b88a35;
+    align-items: center;
 }
 
 .logo {
-    color: #d6a64f;
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-style: italic;
+    color: #d9a441;
+    font-size: 25px;
     font-weight: bold;
+    font-style: italic;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 28px;
+    gap: 25px;
 }
 
 nav ul li a {
-    font-size: 12px;
-    color: #ffffff;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #d6a64f;
-}
-
-.nav-button {
-    border: 1px solid #d6a64f;
-    border-radius: 20px;
-    padding: 8px 22px;
-    color: white;
-    font-size: 12px;
+    color: #d9a441;
 }
 
 
 /* ================= HOME ================= */
 
-.home {
+.hero {
     min-height: 90vh;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    background: #050505;
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.home-container {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 45% 55%;
-    align-items: center;
-    gap: 40px;
+.hero-content {
+    max-width: 900px;
+    text-align: center;
 }
 
-.home-images {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.home-img {
-    overflow: hidden;
-    border: 1px solid #b88a35;
-}
-
-.home-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.home-img.large {
-    width: 260px;
-    height: 360px;
-    border-radius: 130px 130px 20px 20px;
-}
-
-.home-img.small {
-    width: 170px;
-    height: 270px;
-    border-radius: 100px;
-}
-
-.home-content {
-    padding-left: 20px;
-}
-
-.home-content h1 {
-    color: #d9a84e;
-    font-family: Georgia, serif;
+.hero h1 {
     font-size: 75px;
-    line-height: 0.9;
+    color: #d9a441;
     font-style: italic;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
-.home-content h2 {
-    font-family: Georgia, serif;
-    font-size: 22px;
+.hero h2 {
+    font-size: 25px;
     font-weight: normal;
     margin-bottom: 20px;
 }
 
-.home-content p {
-    color: #d0d0d0;
-    font-size: 13px;
+.hero p {
+    max-width: 700px;
+    margin: auto;
     line-height: 1.8;
-    max-width: 570px;
+    font-size: 16px;
+    color: #eeeeee;
 }
 
-.gold-line {
-    width: 100%;
-    height: 1px;
-    background: #777;
-    margin: 25px 0;
-}
-
-.home-button {
+.btn {
     display: inline-block;
-    border: 1px solid #d6a64f;
+    margin-top: 30px;
+
+    padding: 13px 35px;
+
+    border: 1px solid #d9a441;
     border-radius: 25px;
-    padding: 12px 35px;
+    color: white;
+    text-decoration: none;
+
     transition: 0.3s;
 }
 
-.home-button:hover {
-    background: #d6a64f;
-    color: #050505;
-}
-
-
-/* ================= SECTION TITLE ================= */
-
-.title {
-    color: #d6a64f;
-    font-family: Georgia, serif;
-    font-size: 55px;
-    font-style: italic;
-    margin-bottom: 35px;
+.btn:hover {
+    background: #d9a441;
+    color: #080808;
 }
 
 
 /* ================= ABOUT ================= */
 
 .about {
-    background: #050505;
+    background: #080808;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
 .about-images {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-bottom: 45px;
 }
 
 .about-images img {
     width: 100%;
-    height: 230px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #a87932;
+}
+
+.about-content h2 {
+    font-size: 50px;
+    color: #d9a441;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 55px;
+    color: #d9a441;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+
+/* ================= COLLECTION ================= */
+
+.collection {
+    background: #080808;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.collection-item {
+    overflow: hidden;
+    border: 1px solid #a87932;
+    transition: 0.3s;
+}
+
+.collection-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(217, 164, 65, 0.3);
+}
+
+.collection-item img {
+    width: 100%;
+    height: 350px;
     object-fit: cover;
 }
 
-.round-left {
-    border-radius: 100px 100px 20px 20px;
-}
-
-.round-center {
-    border-radius: 50%;
-}
-
-.round-right {
-    border-radius: 100px 100px 20px 20px;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-}
-
-.about-box {
+.collection-item-info {
     padding: 20px;
+    background: #0f0f0f;
 }
 
-.about-box:first-child {
-    border-right: 1px solid #b88a35;
+.collection-item h3 {
+    font-size: 18px;
+    color: #d9a441;
+    margin-bottom: 10px;
 }
 
-.about-box h2 {
-    color: #d6a64f;
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.about-box h3 {
-    color: white;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.about-box p {
-    color: #cfcfcf;
+.collection-item p {
     font-size: 13px;
-    line-height: 1.8;
+    color: #b0b0b0;
 }
 
 
 /* ================= SERVICES ================= */
 
 .services {
+    background: #080808;
+}
+
+.services-container {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    gap: 50px;
-}
-
-.service-image {
-    height: 600px;
-    overflow: hidden;
-    border-radius: 160px 160px 30px 30px;
-    border: 1px solid #b88a35;
-}
-
-.service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .services-content h3 {
+    font-size: 20px;
     color: white;
-    font-size: 22px;
     margin-bottom: 20px;
 }
 
-.services-content p {
-    color: #cfcfcf;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.service-list {
+.services-list {
     list-style: none;
-    margin-bottom: 30px;
 }
 
-.service-list li {
-    color: #d6a64f;
-    font-size: 13px;
-    margin-bottom: 12px;
-    padding-left: 20px;
+.services-list li {
+    font-size: 15px;
+    color: #d0d0d0;
+    margin-bottom: 15px;
+    padding-left: 30px;
     position: relative;
 }
 
-.service-list li:before {
-    content: "✓";
+.services-list li:before {
+    content: "✦";
     position: absolute;
     left: 0;
+    color: #d9a441;
+}
+
+.services-image {
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid #a87932;
+}
+
+.services-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
 /* ================= CONTACT ================= */
 
 .contact {
+    background: #080808;
     text-align: center;
 }
 
 .contact-content {
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .contact-content p {
-    color: #cfcfcf;
-    font-size: 13px;
+    font-size: 16px;
+    color: #d0d0d0;
     line-height: 1.8;
     margin-bottom: 30px;
 }
 
-.contact-button {
-    display: inline-block;
-    border: 1px solid #d6a64f;
-    border-radius: 25px;
-    padding: 12px 35px;
-    transition: 0.3s;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.contact-button:hover {
-    background: #d6a64f;
-    color: #050505;
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    background: #0f0f0f;
+    border: 1px solid #a87932;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #777;
+}
+
+.contact-form button {
+    padding: 13px 35px;
+    background: transparent;
+    border: 1px solid #d9a441;
+    color: #d9a441;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background: #d9a441;
+    color: #080808;
 }
 
 
@@ -354,14 +354,40 @@ nav ul li a:hover {
 
 footer {
     background: #0a0a0a;
+    border-top: 1px solid #a87932;
     padding: 40px 7%;
     text-align: center;
-    border-top: 1px solid #b88a35;
 }
 
 footer p {
+    font-size: 13px;
     color: #888;
-    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 12px;
+    }
 }
 
 </style>
@@ -376,80 +402,124 @@ footer p {
     <ul>
         <li><a href="#home">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
+        <li><a href="#collection">COLLECTION</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#contact">CONTACT</a></li>
     </ul>
-    <a href="#" class="nav-button">SHOP</a>
 </nav>
 
-<!-- HOME SECTION -->
-<section class="home" id="home">
-    <div class="home-container">
-        <div class="home-images">
-            <div class="home-img large">
-                <img src="https://via.placeholder.com/260x360" alt="Jewelry">
-            </div>
-            <div class="home-img small">
-                <img src="https://via.placeholder.com/170x270" alt="Jewelry">
-            </div>
-        </div>
-        <div class="home-content">
-            <h1>Aurelia</h1>
-            <h2>Luxury Jewelry Collection</h2>
-            <p>Discover our exquisite collection of handcrafted jewelry pieces. Each piece is carefully designed and created to reflect elegance, sophistication, and timeless beauty.</p>
-            <div class="gold-line"></div>
-            <a href="#" class="home-button">EXPLORE COLLECTION</a>
-        </div>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Aurelia</h1>
+        <h2>Luxury Jewelry Collection</h2>
+        <p>Discover our exquisite collection of handcrafted jewelry pieces. Each creation combines timeless elegance with contemporary design, made with the finest materials and exceptional craftsmanship.</p>
+        <a href="#collection" class="btn">EXPLORE COLLECTION</a>
     </div>
 </section>
 
 <!-- ABOUT SECTION -->
 <section class="about" id="about">
-    <h2 class="title">About Aurelia</h2>
-    <div class="about-images">
-        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-left">
-        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-center">
-        <img src="https://via.placeholder.com/350x230" alt="Jewelry" class="round-right">
-    </div>
-    <div class="about-content">
-        <div class="about-box">
-            <h2>Our Story</h2>
-            <p>Founded in 2020, Aurelia has been dedicated to creating luxury jewelry pieces that combine traditional craftsmanship with contemporary design. Our artisans work tirelessly to ensure every piece meets our exacting standards of quality and beauty.</p>
+    <h2 class="section-title">About Aurelia</h2>
+    <div class="about-container">
+        <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=85" alt="Jewelry">
+            <img src="https://images.unsplash.com/photo-1525895975259-eac5ff8003b6?auto=format&fit=crop&w=500&q=85" alt="Jewelry">
+            <img src="https://images.unsplash.com/photo-1586826286197-a1f18f5c47fc?auto=format&fit=crop&w=500&q=85" alt="Jewelry">
+            <img src="https://images.unsplash.com/photo-1500032299648-e8ecf4f37d51?auto=format&fit=crop&w=500&q=85" alt="Jewelry">
         </div>
-        <div class="about-box">
-            <h2>Our Values</h2>
-            <p>We believe in sustainability, ethical sourcing, and supporting local artisans. Each piece in our collection is made with the finest materials and reflects our commitment to environmental responsibility and social impact.</p>
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>Founded with a passion for luxury and craftsmanship, Aurelia has been creating stunning jewelry pieces since 2010. Each item is carefully designed by our master artisans using traditional techniques combined with modern innovation.</p>
+            <p>We believe that jewelry is more than just an accessory – it's a statement of elegance and a reflection of your personal style. Every piece in our collection tells a story of dedication, artistry, and timeless beauty.</p>
+            <p>Our commitment to quality, sustainability, and ethical sourcing ensures that you can wear Aurelia jewelry with pride and confidence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COLLECTION SECTION -->
+<section class="collection" id="collection">
+    <h2 class="section-title">Our Collection</h2>
+    <div class="collection-grid">
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1585329177980-4bc95d00952a?auto=format&fit=crop&w=500&q=85" alt="Necklace">
+            <div class="collection-item-info">
+                <h3>Elegance Necklace</h3>
+                <p>A stunning piece perfect for any occasion</p>
+            </div>
+        </div>
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=85" alt="Ring">
+            <div class="collection-item-info">
+                <h3>Royal Ring</h3>
+                <p>Crafted with precision and luxury</p>
+            </div>
+        </div>
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=85" alt="Earrings">
+            <div class="collection-item-info">
+                <h3>Prestige Earrings</h3>
+                <p>Timeless design with modern touch</p>
+            </div>
+        </div>
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=85" alt="Bracelet">
+            <div class="collection-item-info">
+                <h3>Ethereal Bracelet</h3>
+                <p>Delicate elegance on your wrist</p>
+            </div>
+        </div>
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1528148343865-67218b9eae5e?auto=format&fit=crop&w=500&q=85" alt="Pendant">
+            <div class="collection-item-info">
+                <h3>Divine Pendant</h3>
+                <p>A centerpiece of luxury and grace</p>
+            </div>
+        </div>
+        <div class="collection-item">
+            <img src="https://images.unsplash.com/photo-1586826286197-a1f18f5c47fc?auto=format&fit=crop&w=500&q=85" alt="Set">
+            <div class="collection-item-info">
+                <h3>Luxe Set</h3>
+                <p>Complete your look with style</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- SERVICES SECTION -->
 <section class="services" id="services">
-    <div class="service-image">
-        <img src="https://via.placeholder.com/500x600" alt="Services">
-    </div>
-    <div class="services-content">
-        <h2 class="title">Our Services</h2>
-        <h3>Premium Jewelry Services</h3>
-        <p>We offer a complete range of jewelry services to ensure your pieces remain beautiful for years to come.</p>
-        <ul class="service-list">
-            <li>Custom Design & Creation</li>
-            <li>Professional Cleaning & Maintenance</li>
-            <li>Jewelry Repair & Restoration</li>
-            <li>Resizing & Adjustments</li>
-            <li>Certification & Appraisal</li>
-            <li>Engraving Services</li>
-        </ul>
-        <a href="#" class="home-button">LEARN MORE</a>
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-container">
+        <div class="services-content">
+            <h3>Premium Jewelry Services</h3>
+            <ul class="services-list">
+                <li>Custom Design & Creation</li>
+                <li>Professional Cleaning & Polishing</li>
+                <li>Jewelry Repair & Restoration</li>
+                <li>Resizing & Adjustments</li>
+                <li>Stone Setting & Replacement</li>
+                <li>Engraving & Personalization</li>
+                <li>Certification & Appraisal</li>
+                <li>Maintenance & Care</li>
+            </ul>
+        </div>
+        <div class="services-image">
+            <img src="https://images.unsplash.com/photo-1515520541207-9c61e75b1e6d?auto=format&fit=crop&w=500&q=85" alt="Services">
+        </div>
     </div>
 </section>
 
 <!-- CONTACT SECTION -->
 <section class="contact" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
     <div class="contact-content">
-        <h2 class="title">Get In Touch</h2>
-        <p>Have questions or interested in our collections? We'd love to hear from you. Contact our team today to schedule a consultation or visit our showroom.</p>
-        <a href="mailto:info@aurelia.com" class="contact-button">CONTACT US</a>
+        <p>Have questions about our collections or services? Contact us today. We're here to help you find the perfect piece.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
     </div>
 </section>
 
